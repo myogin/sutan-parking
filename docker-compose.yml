@@ -1,0 +1,32 @@
+version: "3"
+services:
+    app:
+        container_name: sutan_parking_app
+        build:
+            context: .
+            dockerfile: ./docker/php/Dockerfile
+        restart: unless-stopped
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        external_links:
+            - mysql
+        networks:
+            - default
+
+    webserver:
+        container_name: sutan_parking_webserver
+        image: nginx
+        restart: unless-stopped
+        working_dir: /var/www
+        expose:
+            - "80"
+        ports:
+            - "8000:80"
+        links:
+            - app
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx:/etc/nginx/conf.d
+        networks:
+            - default

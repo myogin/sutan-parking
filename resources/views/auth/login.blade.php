@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sign Up | JSS Parking System - Admin Template</title>
+    <title>Sign Up | Sutan Parking System - Admin Template</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,13 +37,14 @@
                         <div class="logo-centered">
                             <a href="../index.html"><img src="../src/img/brand.svg" alt=""></a>
                         </div>
-                        <h3>Sign In to JSS Parking System</h3>
+                        <h3>Sign In to Sutan Parking System</h3>
                         <p>Happy to see you again!</p>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -67,24 +68,26 @@
                             <div class="row">
                                 <div class="col text-left">
                                     <label class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" name="remember"
+                                            id="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <span class="custom-control-label">&nbsp;Remember Me</span>
                                     </label>
                                 </div>
                                 <div class="col text-right">
                                     @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                             <div class="sign-btn text-center">
-                                <button type="submit" class="btn btn-theme">  {{ __('Login') }}</button>
+                                <button type="submit" class="btn btn-theme"> {{ __('Login') }}</button>
                             </div>
                         </form>
                         <div class="register">
-                            <p>{{ __("Don't have an account?") }} <a href="{{ route('register') }}">{{ __('Create an Account') }}</a></p>
+                            <p>{{ __("Don't have an account?") }} <a
+                                    href="{{ route('register') }}">{{ __('Create an Account') }}</a></p>
                         </div>
                     </div>
                 </div>

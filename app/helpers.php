@@ -15,10 +15,10 @@ if (!function_exists('makeAvatar')) {
         imagecolorallocate($image, $red, $green, $blue);
         $textcolor = imagecolorallocate($image, 255, 255, 255);
 
-        // Add some shadow to the text
-        imagettftext($image, 110, 0, 51, 151, $textcolor, $fontPath, $char);
-        // Add the text
-        imagettftext($image, 105, 0, 50, 150, $textcolor, $fontPath, $char);
+        // // Add some shadow to the text
+        // imagettftext($image, 110, 0, 51, 151, $textcolor, $fontPath, $char);
+        // // Add the text
+        // imagettftext($image, 105, 0, 50, 150, $textcolor, $fontPath, $char);
         imagepng($image, $path);
         imagedestroy($image);
         return $path;
